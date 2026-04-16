@@ -1,6 +1,7 @@
 import { Bebas_Neue, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const bebas = Bebas_Neue({
   subsets: ["latin"],
@@ -33,7 +34,10 @@ export default function RootLayout({ children }) {
       >
         <div className="max-w-7xl mx-auto">
           <Navbar />
-          {children}
+          <div className="min-h-screen">
+            {children}
+          </div>
+          <Footer />
         </div>
       </body>
     </html>
