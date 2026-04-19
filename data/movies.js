@@ -312,4 +312,4 @@ const deleteMovie = (id) => {
     return true;
 };
 
-export { getAllMovie, getMovieById, addMovie, updateMovie, deleteMovie };
+export { movies, getAllMovie, getMovieById, addMovie, updateMovie, deleteMovie };
