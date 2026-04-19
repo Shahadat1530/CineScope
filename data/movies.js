@@ -312,4 +312,8 @@ const deleteMovie = (id) => {
     return true;
 };
 
-export { movies, getAllMovie, getMovieById, addMovie, updateMovie, deleteMovie };
+const getMovieBySlug = (slug) => {
+    return movies.find(movie => movie.slug === slug);
+};
+
+export { movies, getAllMovie, getMovieById, addMovie, updateMovie, deleteMovie, getMovieBySlug };
