@@ -258,7 +258,7 @@ const movies = [
 ]
 
 const getAllMovie = () => {
-    return data = movies.map(m => ({
+    return movies.map(m => ({
         id: m?.id,
         slug: m?.slug,
         title: m?.title,
@@ -267,7 +267,49 @@ const getAllMovie = () => {
 };
 
 const getMovieById = (id) => {
-    return photos.find(photo => photo.id === id);
-}
+    return movies.find((movie) => movie.id === id);
+};
 
-export { getAllMovie, getMovieById };
+const addMovie = (data) => {
+    const newMovie = {
+        id: String(movies?.length + 1),
+        slug: data?.title.toLowerCase().replace(/\s+/g, "-"),
+        title: data?.title,
+        description: data?.description,
+        genre: data?.genre || "Unknown",
+        director: data?.director || "Unknown",
+        year: data?.year || "Unknown",
+        runtime: data?.runtime || "Unknown",
+        rating: data?.rating || "Unknown",
+        viewCount: data?.viewCount || "Unknown",
+        likeCount: data?.likeCount || "Unknown",
+        posterColor: data?.posterColor || "#185FA5",
+        releaseDate: data?.releaseDate || "Unknown",
+        poster: data?.poster || "",
+    };
+
+    movies.push(newMovie);
+    return newMovie;
+};
+
+const updateMovie = (id, data) => {
+    const movie = movies?.find((m) => m.id === id);
+
+    if (!movie) return null;
+
+    movie.title = data?.title ?? movie?.title;
+    movie.description = data?.description ?? movie?.description;
+
+    return movie;
+};
+
+const deleteMovie = (id) => {
+    const index = movies.findIndex((m) => m.id === id);
+
+    if (index === -1) return false;
+
+    movies.splice(index, 1);
+    return true;
+};
+
+export { getAllMovie, getMovieById, addMovie, updateMovie, deleteMovie };
