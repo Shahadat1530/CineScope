@@ -12,7 +12,12 @@ const FeaturedMovies = () => {
 
             <div className="grid md:grid-cols-3 gap-6">
                 {featured.map((movie) => (
-                    <MovieCard key={movie.id} movie={movie} />
+                    <Link
+                        href={`/movies/${movie?.slug}`}
+                        key={movie.id}
+                    >
+                        <MovieCard movie={movie} />
+                    </Link>
                 ))}
             </div>
 

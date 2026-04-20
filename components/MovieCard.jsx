@@ -5,7 +5,6 @@ import Link from "next/link";
 const MovieCard = ({ movie }) => {
     return (
         <>
-            <Link href={`/movies/${movie?.slug}`}>
                 <div className="bg-bg2 border border-white/10 rounded-xl overflow-hidden hover:-translate-y-1 transition cursor-pointer">
 
                     {/* Poster */}
@@ -70,7 +69,6 @@ const MovieCard = ({ movie }) => {
                     </div>
 
                 </div>
-            </Link>
         </>
     );
 };
