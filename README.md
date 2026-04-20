@@ -12,7 +12,7 @@ CineScope is a modern web application built with Next.js that allows users to br
 
 ## Advanced Routing
 - 🎭 Parallel Routing - Uses @modal slot for seamless modal rendering
-- 🔄 Intercepting Routes - Opens news details in a modal while updating the URL
+- 🔄 Intercepting Routes - Opens movie details in a modal while updating the URL
 - 🔃 Graceful Fallback - Reloading a modal URL shows the full page view
 
 ---
